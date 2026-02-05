@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnClose = document.getElementById('btn-close');
     const heartsContainer = document.getElementById('hearts-container');
 
-    // 1. Création des cœurs flottants en arrière-plan
+    // 1. Création des cœurs flottants
     const createHeart = () => {
         const heart = document.createElement('div');
         heart.className = 'floating-heart';
@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         heart.style.left = Math.random() * 100 + 'vw';
         heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
         heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-        
         heartsContainer.appendChild(heart);
-
-        // Supprimer le cœur après l'animation
         setTimeout(() => { heart.remove(); }, 5000);
     };
 
@@ -24,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Logique du bouton "Non" qui s'enfuit
     const moveButton = () => {
-        // On calcule des positions aléatoires en restant dans le viewport
-        // On retire une marge pour que le bouton ne sorte pas de l'écran
         const x = Math.random() * (window.innerWidth - btnNon.offsetWidth - 20);
         const y = Math.random() * (window.innerHeight - btnNon.offsetHeight - 20);
 
@@ -35,22 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     btnNon.addEventListener('mouseover', moveButton);
-    btnNon.addEventListener('touchstart', moveButton); // Pour mobile
+    btnNon.addEventListener('touchstart', moveButton);
 
     // 3. Action sur le bouton "Oui"
     btnOui.addEventListener('click', () => {
         modal.classList.remove('hidden');
-        btnOui.disabled = true;
-        btnNon.disabled = true;
         
-        // Explosion de joie (confettis simplifiés)
+        // On ne désactive plus les boutons pour pouvoir rejouer !
+        
+        // Explosion de joie
         for(let i = 0; i < 50; i++) {
             setTimeout(createHeart, i * 20);
         }
     });
 
-    // Fermer la modal
+    // Fermer la modal et réinitialiser le bouton "Non"
     btnClose.addEventListener('click', () => {
         modal.classList.add('hidden');
+        
+        // Optionnel : remet le bouton "Non" à sa place d'origine
+        btnNon.style.position = 'relative';
+        btnNon.style.left = 'auto';
+        btnNon.style.top = 'auto';
     });
 });
