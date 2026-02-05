@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pour Barbara ❤️</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Barbara ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div id="hearts-container"></div>
+    <div id="hearts-container"></div>
 
-	<main class="card">
-		<div class="icon-header">❤️</div>
-		<h1>Barbara, veux-tu être ma Valentine ?</h1>
-		
-		<div class="buttons">
-			<button id="btn-oui" class="btn-primary">OUI !</button>
-			<button id="btn-non" class="btn-secondary">Non</button>
-		</div>
-	</main>
+    <main class="card">
+        <div class="icon-header">❤️</div>
+        <h1>Barbara, veux-tu être ma Valentine ?</h1>
+        
+        <div class="buttons">
+            <button id="btn-oui" class="btn-primary">OUI !</button>
+            <button id="btn-non" class="btn-secondary">Non</button>
+        </div>
+        
+        <p id="counter-text" style="margin-top: 20px; font-size: 0.8rem; color: #999; opacity: 0;">
+            Tentatives d'esquive : <span id="count">0</span>
+        </p>
+    </main>
 
-	<div id="modal" class="modal hidden">
-		<div class="modal-content">
-			<h2>Merci d'avoir accepté ❤️</h2>
-			<p>Tu viens de rendre ma journée merveilleuse !</p>
-			<button id="btn-close">Fermer</button>
-		</div>
-	</div>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Merci d'avoir accepté ❤️</h2>
+            <p>Tu viens de rendre ma journée merveilleuse !</p>
+            <button id="btn-close">Fermer</button>
+        </div>
+    </div>
 
-	<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
