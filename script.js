@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		if(moveCount === 5) btnNon.innerText = "Sérieusement ?";
 		if(moveCount === 10) btnNon.innerText = "Tu as de bons réflexes...";
 		if(moveCount === 15) btnNon.innerText = "Bon, j'arrête.";
+		if(moveCount === 16) btnNon.innerText = "MDR comme si j'allais arrêter !";
+		if(moveCount === 21) btnNon.innerText = "Mais on sait tous que tu veux dire oui...";
 	};
 
 	btnNon.addEventListener('mouseover', moveButton);
