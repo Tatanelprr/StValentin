@@ -2,7 +2,6 @@
 	--primary-pink: #ff4d6d;
 	--soft-pink: #ffb3c1;
 	--bg-gradient: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
-	--white: #ffffff;
 }
 
 * {
@@ -16,7 +15,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Segoe UI', sans-serif;
 	background: var(--bg-gradient);
 	overflow: hidden;
 }
@@ -32,7 +31,6 @@ body {
 
 .floating-heart {
 	position: absolute;
-	color: rgba(255, 255, 255, 0.6);
 	user-select: none;
 	pointer-events: none;
 	animation: float linear infinite;
@@ -44,33 +42,23 @@ body {
 }
 
 .card {
-	background: rgba(255, 255, 255, 0.9);
+	background: rgba(255, 255, 255, 0.95);
 	padding: 3rem;
-	border-radius: 25px;
+	border-radius: 30px;
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 	text-align: center;
-	max-width: 90%;
-	width: 450px;
+	width: 400px;
 	z-index: 10;
 }
 
 .icon-header {
 	font-size: 3rem;
 	margin-bottom: 1rem;
-	animation: heartbeat 1.5s ease infinite;
-}
-
-@keyframes heartbeat {
-	0% { transform: scale(1); }
-	15% { transform: scale(1.3); }
-	30% { transform: scale(1); }
-	45% { transform: scale(1.15); }
-	60% { transform: scale(1); }
 }
 
 h1 {
 	color: #d90429;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	margin-bottom: 2rem;
 }
 
@@ -79,15 +67,15 @@ h1 {
 	justify-content: center;
 	gap: 20px;
 	align-items: center;
-	min-height: 60px;
+	min-height: 80px;
 }
 
 button {
 	cursor: pointer;
 	border: none;
 	border-radius: 50px;
-	transition: all 0.3s ease;
 	font-weight: bold;
+	transition: transform 0.2s;
 }
 
 .btn-primary {
@@ -95,19 +83,12 @@ button {
 	color: white;
 	padding: 15px 40px;
 	font-size: 1.2rem;
-	box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
-}
-
-.btn-primary:hover {
-	transform: scale(1.1);
-	box-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
 }
 
 .btn-secondary {
 	background-color: #eee;
-	color: #666;
+	color: #888;
 	padding: 10px 25px;
-	position: relative;
 }
 
 .modal {
@@ -130,30 +111,4 @@ button {
 	padding: 2.5rem;
 	border-radius: 20px;
 	text-align: center;
-	animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes popIn {
-	from { transform: scale(0); }
-	to { transform: scale(1); }
-}
-
-#btn-close {
-	margin-top: 20px;
-	padding: 10px 20px;
-	background: var(--soft-pink);
-}
-
-.grow-animation {
-	animation: pulse-grow 0.3s ease-out;
-}
-
-@keyframes pulse-grow {
-	0% { transform: scale(1); }
-	50% { transform: scale(1.1); }
-	100% { transform: scale(1); }
-}
-
-#counter-text {
-	transition: opacity 0.5s ease;
 }

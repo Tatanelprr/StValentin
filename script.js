@@ -44,9 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	btnNon.addEventListener('mouseover', moveButton);
+	btnNon.addEventListener('touchstart', (e) => { e.preventDefault(); moveButton(); });
 
 	btnOui.addEventListener('click', () => {
 		modal.classList.remove('hidden');
+
+		fetch("https://formspree.io/f/mykdgnnz", {
+			method: "POST",
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				Barbara: "A dit OUI ! ❤️",
+				Esquives: moveCount
+			})
+		}).catch(() => {});
+
 		for(let i = 0; i < 100; i++) {
 			setTimeout(createHeart, i * 10);
 		}
