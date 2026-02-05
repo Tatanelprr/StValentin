@@ -147,3 +147,17 @@ button {
     padding: 10px 20px;
     background: var(--soft-pink);
 }
+
+.grow-animation {
+    animation: pulse-grow 0.3s ease-out;
+}
+
+@keyframes pulse-grow {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#counter-text {
+    transition: opacity 0.5s ease;
+}
